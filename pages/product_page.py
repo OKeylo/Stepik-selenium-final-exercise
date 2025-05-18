@@ -21,3 +21,9 @@ class ProductPage(BasePage):
     def click_on_add_to_basket_button(self):
         button_el = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         button_el.click()
+
+    def should_is_not_present_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MSG)
+    
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MSG)
